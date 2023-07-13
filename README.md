@@ -17,3 +17,7 @@ Het kwam voor dat PAL21 de hoeveelheid regels uit het B4U Bestand niet aankon. D
 ## rapportNaarB4U.py
 
 PAL21 slaat de bestanden niet op zoals ze binnen komen. Echter het B4U bestand wordt als multiline tekst opgeslagen in de importregel. Hierop is een PAL21 rapportage geschreven. Dit rapport bevat echter lege regels. Deze code pakt het CSV rapport op en doorloopt deze regel voor regel. Lege regels en kop- en voetregels worden verwijderd. Hierna wordt een kop- en voetregel toegevoegd en dan heb je een mega B4U bestand.
+
+## b4u.code-snippets
+
+In Visual Studio Code is het mogelijk om een snippet aan te maken. Dit is een soort sneltoets. Met deze snippet kan je een voorloop- en sluitrecord voor een B4U bestand direct genereren zonder na te hoeven denken over de posities.

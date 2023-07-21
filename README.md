@@ -4,6 +4,9 @@ Welcome to the B4U tools repo. I am Freddy Meijer and at the time business engin
 ## .gitignore
 The gitignore file states that .b4u files will not be uploaded through git. The information in a b4u file is personal en thereby protected under GDPA regulations. So the files itself should never be uploaded on GitHub.
 
+## b4u.code-snippets
+In Visual Studio Code you can create a snippet. If you type html for instance, VS Code will autocomplete the HTML file. This can also be done with a B4U snippet. This code provides an empty b4u file, but with header and footer records.
+
 ## ConvertB4UToCSV
 To run this script pandas should be installed. In line 3, you state the path to the location of the file (variable *locationSource*). This includes the file itself. With this variable, the variable *locationTarget* will be created. This two are the same, except for the extention (b4u will be changed to csv).
 

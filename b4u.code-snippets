@@ -1,16 +1,11 @@
-//Ontwikkelaar: Freddy Meijer functioneel beheer VTH gemeente Leiden
-//Datum: 22-05-2023
-//Onderwerp: Snippet voor het importeren van start- en sluitrecord B4U bestand                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         //Ontwikkelaar: Freddy Meijer functioneel beheer VTH gemeente Leiden
-//Versie 1.1 (22-05-2023) - Toevoegen testsnippet
-
 {
-  "B4U start- en sluitrecord": {
+  "B4U header- and footer record": {
     "prefix": "b4u",
     "body": [
       "01 TRDLC PHS4U 0000000000        20230522074439                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ",
       "$1",
       "99EINDE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ",
     ],
-    "description": "Voegt het start- en sluitrecord in voor een nieuw b4u bestand"
+    "description": "Creates an empty B4U file but with header and footer records"
   }
 }

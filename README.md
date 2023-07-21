@@ -1,14 +1,17 @@
-# B4U Git
+# B4U Tools
+Welcome to the B4U tools repo. I am Freddy Meijer and at the time business engineer at Leiden. In a Betty Blocks application we retrieve information from City Control (Sigmax). The data of City Control is in B4U format. A custom fileformat created by Sigmax. B4U is fixed lenght so we can translate that to a readable format (table). In this repo you find serveral tools to work with B4U files.
 
-Welkom op de B4U Git. Ik ben Freddy Meijer en ik ten tijde van het schrijven van dit bestand functioneel applicatie beheerder bij de gemeente Leiden. 
+## .gitignore
+The gitignore file states that .b4u files will not be uploaded through git. The information in a b4u file is personal en thereby protected under GDPA regulations. So the files itself should never be uploaded on GitHub.
 
-## Inleiding
+## ConvertB4UToCSV
+To run this script pandas should be installed. In line 3, you state the path to the location of the file (variable *locationSource*). This includes the file itself. With this variable, the variable *locationTarget* will be created. This two are the same, except for the extention (b4u will be changed to csv).
 
-Vanuit Sigmax City Control wordt een B4U bestand gedumpt. Deze moet ingelezen worden in PAL21. Echter: Soms is het nodig om analyses te doen op het B4U bestand of om andere bewerkingen te doen. Alle (Python) code die hiervoor nodig is, staat in deze repo
+The file in *locationSource* is opend and all lines in the file will be looped through, except the first and last line which are the header and tailline of the file which does not include data we want to extract. Furthermore we create an empty array (*data*) which we will fill in the following for-loop
 
-## Converteer_B4U_bestand.py
+In the for-loop every line from the source is cut into seperate variables. These variables are appended to the array *data*. The variable names are in Dutch for this file is used in a Dutch environment (the CSV). The code is in English. 
 
-Op regel 11 dient het volledige bestandspad opgenomen te worden van het B4U bestand. Dit pad wordt tussen de quotes geplaatst. Vervolgens wordt het B4U bestand in een pandas dataframe geplaatst en gedumpt naar csv. Op deze manier kan je sneller en gemakkelijker via een spreadsheet programma analyses doen.
+When the loop is at an end, the array (*data*) is converted to a pandas dataframe (*df*). This dataframe is then saved as a CSV on the targetlocation (stored in *locationTarget*).
 
 ## Splits_B4U_bestand.py
 

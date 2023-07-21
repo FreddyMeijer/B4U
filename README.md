@@ -16,14 +16,17 @@ In the for-loop every line from the source is cut into seperate variables. These
 
 When the loop is at an end, the array (*data*) is converted to a pandas dataframe (*df*). This dataframe is then saved as a CSV on the targetlocation (stored in *locationTarget*).
 
-## Splits_B4U_bestand.py
+## SplitB4U
+The Python code is build up in two parts. The first is a function in which the sourcefile (*original*) is cut up in serveral smaller files. The second part is the piece of code which executes the function.
 
-Het kwam voor dat PAL21 de hoeveelheid regels uit het B4U Bestand niet aankon. Deze code pakt het B4U bestand en knipt deze in kleinere blokken. Op regel 40 wordt het pad naar het grote B4U bestand gedefinieerd. In regel 41 kan je aangeven hoe groot de nieuwe bestanden moeten worden. Dus met andere woorden: Als je een basisbestand hebt van 100 regels en je laat de variabele RijenPerBestand op 10 staan, zullen er 10 bestanden gecreerd worden.
+The function reads the original B4U file. The first row (header) and the last row (footer) are saved in the variables with the names *header* en *footer* (.pop()). The total amount of lines is devided with the *rowsPerFile*. This makes the *totalFiles* 
+
+When we know the total amount of files, we can loop through these files. The total amount of lines is determined by the calculation *lines[i * rowsPerFile: (i + 1) * rowsPerFile]*. Now we know which lines of the original should be transfered to the new file, we append the footer and insert the header before the first line. 
+
+This will be saved in an outputfile with the same name but with the counter attached. So when the original file is *freddy.b4u* then the first new file will be *freddy_1.b4u*. The result is printed to terminal.
+
+When we use the function, we need to give the total path (including the file itself) in *original* (codeline 20). Furthermore we must indicate how many lines the new files should have (*rowsPerFile* in codeline 21). Then we cut the name of the file by saving the characters between the last slash and before the last dot. This variable (*new*) is needed for the new filesnames.
 
 ## rapportNaarB4U.py
 
 PAL21 slaat de bestanden niet op zoals ze binnen komen. Echter het B4U bestand wordt als multiline tekst opgeslagen in de importregel. Hierop is een PAL21 rapportage geschreven. Dit rapport bevat echter lege regels. Deze code pakt het CSV rapport op en doorloopt deze regel voor regel. Lege regels en kop- en voetregels worden verwijderd. Hierna wordt een kop- en voetregel toegevoegd en dan heb je een mega B4U bestand.
-
-## b4u.code-snippets
-
-In Visual Studio Code is het mogelijk om een snippet aan te maken. Dit is een soort sneltoets. Met deze snippet kan je een voorloop- en sluitrecord voor een B4U bestand direct genereren zonder na te hoeven denken over de posities.

@@ -27,4 +27,4 @@ This will be saved in an outputfile with the same name but with the counter atta
 
 When we use the function, we need to give the total path (including the file itself) in *original* (codeline 20). Furthermore we must indicate how many lines the new files should have (*rowsPerFile* in codeline 21). Then we cut the name of the file by saving the characters between the last slash and before the last dot. This variable (*new*) is needed for the new filesnames.
 
-## rapportNaarB4U.py
+## ConvertReportToB4U

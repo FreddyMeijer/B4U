@@ -1,6 +1,16 @@
 import pandas as pd
+import tkinter as tk
+from tkinter import filedialog
 
-locationSource = r'<<PATH TO FILE>>'
+def selectFile():
+    File=filedialog.askopenfilename(
+        title="Selecteer het B4U File",
+        filetypes=[("B4U Bestanden","*.b4u"),("Alle bestanden","*.*")]
+    )
+    if File:
+        return File
+
+locationSource = selectFile()
 locationTarget = locationSource.replace('.b4u', '.csv')
 
 with open(locationSource, 'r') as f:

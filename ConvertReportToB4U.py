@@ -1,3 +1,14 @@
+import tkinter as tk
+from tkinter import filedialog
+
+def selectFile():
+    File=filedialog.askopenfilename(
+        title="Selecteer het B4U File",
+        filetypes=[("CSV Bestanden","*.csv"),("Alle bestanden","*.*")]
+    )
+    if File:
+        return File
+
 def rapportNaarB4U(rapport):
     b4u = rapport.rsplit('.', 1)[0] + '.b4u'
     with open(rapport, 'r', encoding='utf-8') as file:
@@ -16,12 +27,4 @@ def rapportNaarB4U(rapport):
 
     print("Bestand aangemaakt op locatie: " + b4u)
 
-# Plak tussen de quotes (achter rapport) de locatie van het PAL21 rapport
-
-rapport = r'<<Pad_naar_rapport>>'
-
-rapportNaarB4U(rapport)
-
-
-
-
+rapportNaarB4U(selectFile())

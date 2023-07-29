@@ -1,3 +1,14 @@
+import tkinter as tk
+from tkinter import filedialog
+
+def selectFile():
+    File=filedialog.askopenfilename(
+        title="Selecteer het B4U File",
+        filetypes=[("B4U Bestanden","*.b4u"),("Alle bestanden","*.*")]
+    )
+    if File:
+        return File
+
 def createFiles(original, new, rowsPerFile):
     with open(original, 'r') as f:
         lines = f.readlines()
@@ -17,8 +28,9 @@ def createFiles(original, new, rowsPerFile):
 
         print(f"File created: {output_file}")
 
-original = r'PATH_TO_FILE'
-rowsPerFile = 10
+original = selectFile()
+rowsPerFile = input ("Hoeveel regels moeten er per bestand worden gegenereerd? ")
+rowsPerFile = int(rowsPerFile)
 
 lastSlashIndex = original.rfind('\\')
 lastDotIndex = original.find('.', lastSlashIndex)

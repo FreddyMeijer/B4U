@@ -1,6 +1,15 @@
 # B4U Tools
 Welcome to the B4U tools repo. I am Freddy Meijer and at the time business engineer at Leiden. In a Betty Blocks application we retrieve information from City Control (Sigmax). The data of City Control is in B4U format. A custom fileformat created by Sigmax. B4U is fixed lenght so we can translate that to a readable format (table). In this repo you find serveral tools to work with B4U files.
 
+## INSTALLATION
+To install the B4U Tools al you need to do is:
+
+- Download and install an instance of Python
+- Open your terminal navigate to the desired folder and use 'git clone https://github.com/FreddyMeijer/B4U-Tools.git'
+- Open the folder in which the git was cloned
+- Run 'python pip install -r requirements.txt'
+- Run the desired function by using e.g. 'python ConvertB4UToCSV.py'
+
 ## .gitignore
 The gitignore file states that .b4u files will not be uploaded through git. The information in a b4u file is personal en thereby protected under GDPA regulations. So the files itself should never be uploaded on GitHub.
 

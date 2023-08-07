@@ -13,7 +13,7 @@ def selectFile():
 locationSource = selectFile()
 locationTarget = locationSource.replace('.b4u', '.csv')
 
-with open(locationSource, 'r') as f:
+with open(locationSource, 'r', encoding='utf-8') as f:
     lines = f.readlines()[1:-1]
 
 data = []

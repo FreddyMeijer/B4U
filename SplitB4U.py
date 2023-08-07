@@ -10,7 +10,7 @@ def selectFile():
         return File
 
 def createFiles(original, new, rowsPerFile):
-    with open(original, 'r') as f:
+    with open(original, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
     header = lines.pop(0)
@@ -23,7 +23,7 @@ def createFiles(original, new, rowsPerFile):
         fileLines.insert(0, header)
         fileLines.append(footer)
         output_file = f"{new}_{i + 1}.b4u"
-        with open(output_file, 'w') as f_out:
+        with open(output_file, 'w', encoding='utf-8') as f_out:
             f_out.writelines(fileLines)
 
         print(f"File created: {output_file}")
